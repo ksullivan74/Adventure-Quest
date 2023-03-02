@@ -40,6 +40,9 @@ namespace Quest
                 Hat newHat = new Hat();
                 newHat.ShininessLevel = 4;
 
+                // In Program.cs create an instance of the Prize.
+                Prize newPrize = new Prize("Neil, Cassie, John, and Jade are the greatest!");
+
 
                 Challenge favoriteBeatle = new Challenge(
                     @"Who's your favorite Beatle?
@@ -96,6 +99,10 @@ namespace Quest
                 {
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
+
+                //At the end of the quest (before you ask if the user wants to repeat the quest) call the ShowPrize method.
+                newPrize.ShowPrize(theAdventurer);
+
                 Console.WriteLine("Would you like to adventure, Y/N?");
                 X = Console.ReadLine().ToUpper();
             };
