@@ -14,6 +14,7 @@ namespace Quest
             Console.WriteLine("Please Identify yourself Adventurer");
             string adventurerName = Console.ReadLine();
 
+
             //This quest is so much fun that everyone is sure to want to do it more than once. Update the code to ask the user if they'd like to repeat the quest after the it has been completed. If the user says "yes", start the quest over. Otherwise, end the program.
             string X = "Y";
             while (X == "Y")
@@ -31,6 +32,14 @@ namespace Quest
 
                 int randomNumber = new Random().Next() % 10;
                 Challenge guessRandom = new Challenge("What number am I thinking of?", randomNumber, 25);
+
+                Robe newRobe = new Robe();
+                newRobe.Colors = "Purple";
+                newRobe.Length = 3;
+
+                Hat newHat = new Hat();
+                newHat.ShininessLevel = 4;
+
 
                 Challenge favoriteBeatle = new Challenge(
                     @"Who's your favorite Beatle?
@@ -52,7 +61,8 @@ namespace Quest
                 int maxAwesomeness = 100;
 
                 // Make a new "Adventurer" object using the "Adventurer" class
-                Adventurer theAdventurer = new Adventurer(adventurerName);
+                Adventurer theAdventurer = new Adventurer(adventurerName, newRobe, newHat);
+                Console.WriteLine($"{theAdventurer.GetDescription()}");
 
                 // A list of challenges for the Adventurer to complete
                 // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
