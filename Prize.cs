@@ -28,7 +28,7 @@ namespace Quest
             {
                 for (int i = 0; i < adventurerParam.Awesomeness; i++)
                 {
-                    Console.WriteLine($"{_text}");
+                    Console.WriteLine($"{_text}  {i}");
                 }
             }
             else

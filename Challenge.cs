@@ -53,3 +53,43 @@ namespace Quest
         }
     }
 }
+
+/*
+Let's make the challenges a little more interesting. Add 2 to 5 more challenges to the program and then add code to randomly select 5 challenges for our adventurer to face. If the user chooses to repeat the quest another random selection of challenges should happen.
+
+//Create 3 new instances of 3  seperate challenges on the program.cs file DONE
+// Add the 3 new instances of the challenges to the list of challenges on the program.cs file DONE
+// add code to randomly select 5 challenges for our adventurer to face.
+    - create method to get a random integer between the number of challenges
+    -  create a method to accept the list of challenges as a parameter and the random number as a parameter
+    - create an empty List to accept the 5 random challenges index
+    - 
+// If the user chooses to repeat the quest another random selection of challenges should happen.
+    - invoke the challenges method if the user chooses to continue.
+
+List<int> ListNumbers = new List<int>();
+            Random rnd = new Random();
+            int number;
+            for (int i = 0; i < 3; i++)
+            {
+                do
+                {
+                    // this will generate a random number as long as the number is already in the list.
+                    number = rnd.Next(0, affirmations.Count - 1);
+                } while (ListNumbers.Contains(number));
+                ListNumbers.Add(number);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Kaci's Affirmations");
+            for (var i = 0; i < ListNumbers.Count; i++)
+            {
+                var index = ListNumbers[i];
+                Console.WriteLine(affirmations[index]);
+            };
+        }
+    }
+}
+
+*/

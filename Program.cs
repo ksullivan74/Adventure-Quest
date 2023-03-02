@@ -32,6 +32,14 @@ namespace Quest
 
                 int randomNumber = new Random().Next() % 10;
                 Challenge guessRandom = new Challenge("What number am I thinking of?", randomNumber, 25);
+                Console.WriteLine($"{randomNumber}");
+
+                //Create 3 new instances of 3  seperate challenges on the program.cs file
+                Challenge neptunesRevenge = new Challenge("How many awesome teammates are in Novel Neptunians?", 4, 5);
+                Challenge secretPassCode = new Challenge("What is the secret Pass Code?", 0000, 20);
+                Challenge whatsTheAge = new Challenge("What is Neil's Age?", 25, 75);
+
+
 
                 Robe newRobe = new Robe();
                 newRobe.Colors = "Purple";
@@ -75,11 +83,32 @@ namespace Quest
                     theAnswer,
                     whatSecond,
                     guessRandom,
-                    favoriteBeatle
+                    favoriteBeatle,
+                    neptunesRevenge,
+                    secretPassCode,
+                    whatsTheAge
                 };
 
+                List<int> ChallengeNumbers = new List<int>();
+                List<Challenge> RandomChallenges = new List<Challenge>();
+                Random rnd = new Random();
+                int number;
+                for (int i = 0; i < 5; i++)
+                {
+                    do
+                    {
+                        number = rnd.Next(0, challenges.Count - 1);
+                    }
+                    while (ChallengeNumbers.Contains(number));
+                    ChallengeNumbers.Add(number);
+
+                }
+                foreach (int num in ChallengeNumbers)
+                {
+                    RandomChallenges.Add(challenges[num]);
+                }
                 // Loop through all the challenges and subject the Adventurer to them
-                foreach (Challenge challenge in challenges)
+                foreach (Challenge challenge in RandomChallenges)
                 {
                     challenge.RunChallenge(theAdventurer);
                 }
